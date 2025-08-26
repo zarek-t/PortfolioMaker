@@ -10,29 +10,42 @@ def clear_screen():
 
 def print_header():
     print("=" * 60)
-    print("           🚀 PORTFOLIO MAKER PRO 🚀")
+    print("           🚀 PORTFOLIO MAKER 🚀")
     print("     Your Personal Investment Portfolio Advisor")
     print("=" * 60)
     print()
 
 def get_risk_tolerance():
-    # Simplified risk assessment
     print("📊 RISK TOLERANCE ASSESSMENT")
-    options = ["conservative", "moderate", "aggressive"]
+    print("a) Conservative")
+    print("b) Moderate") 
+    print("c) Aggressive")
     while True:
-        choice = input("Enter risk tolerance (conservative/moderate/aggressive): ").lower()
-        if choice in options:
-            return choice
-        print("❌ Invalid choice. Try again.")
+        choice = input("Your choice (a/b/c): ").lower().strip()
+        if choice == 'a':
+            return "conservative"
+        elif choice == 'b':
+            return "moderate"
+        elif choice == 'c':
+            return "aggressive"
+        else:
+            print("❌ Invalid choice. Please enter a, b, or c.")
 
 def get_investment_goal():
     print("\n🎯 INVESTMENT GOAL")
-    options = ["preservation", "growth", "maximum_growth"]
+    print("a) Capital preservation")
+    print("b) Steady growth")
+    print("c) Maximum growth")
     while True:
-        choice = input("Enter investment goal (preservation/growth/maximum_growth): ").lower()
-        if choice in options:
-            return choice
-        print("❌ Invalid choice. Try again.")
+        choice = input("Your choice (a/b/c): ").lower().strip()
+        if choice == 'a':
+            return "preservation"
+        elif choice == 'b':
+            return "growth"
+        elif choice == 'c':
+            return "maximum_growth"
+        else:
+            print("❌ Invalid choice. Please enter a, b, or c.")
 
 def get_investment_horizon():
     print("\n⏰ INVESTMENT TIME HORIZON")
@@ -58,11 +71,21 @@ def display_portfolio(allocation, exp_return, volatility, sharpe, max_drawdown, 
 
 def plot_portfolio(allocation, exp_return, years):
     asset_names = get_asset_names()
+    
     colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD']
     
-    plt.figure(figsize=(8, 6))
-    plt.pie(allocation, labels=asset_names, autopct='%1.1f%%', startangle=90, colors=colors, explode=[0.05]*len(allocation))
+    plt.figure(figsize=(10, 6))
+    
+    # Pie chart without labels or autopct
+    wedges, _ = plt.pie(allocation, startangle=90, colors=colors, explode=[0.05]*len(allocation))
+    
+    # Create legend labels with asset names and percentages
+    legend_labels = [f"{name}: {pct*100:.1f}%" for name, pct in zip(asset_names, allocation)]
+    
+    plt.legend(wedges, legend_labels, title="Asset Classes", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
+    
     plt.title(f'Portfolio Allocation ({years}-year horizon)')
+    plt.tight_layout()
     plt.show()
 
 def main():
