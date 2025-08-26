@@ -1,35 +1,43 @@
-# 🚀 Portfolio Maker
+# 🚀 Portfolio Maker Pro
 
-A Python application that generates **personalized investment portfolios** based on your investment timeline, risk tolerance, and financial goals. The tool provides **comprehensive portfolio analysis** with professional visualizations and actionable recommendations.
+Portfolio Maker Pro is a Python application that generates personalized investment portfolios based on your investment timeline, risk tolerance, and financial goals. It provides comprehensive portfolio analysis with professional-grade visualizations and actionable recommendations.
+
+**Live Demo:** [Portfolio Maker Pro](https://portfoliomaker-awhgv3tvtaz5gtziu6ucjn.streamlit.app/)
+
+---
 
 ## ✨ Features
 
 ### 🎯 Personalized Portfolio Creation
-- **Risk Tolerance Assessment**: Interactive CLI prompts to determine your comfort with market volatility
-- **Investment Goal Selection**: Choose between capital preservation, steady growth, or maximum growth
-- **Time Horizon Analysis**: Optimized allocations from short-term (1–3 years) to very long-term (25+ years)
+- **Risk Tolerance Assessment:** Choose Conservative, Moderate, or Aggressive.
+- **Investment Goal Selection:** Capital Preservation, Steady Growth, or Maximum Growth.
+- **Time Horizon Analysis:** Short-term to very long-term portfolios.
 
-### 📊 Advanced Portfolio Analysis
-- **6 Asset Classes**: US Stocks, International Stocks, Bonds, Real Estate, Cash, and Commodities
-- **Correlation Matrix**: Portfolio risk optimization using asset correlation data
-- **Risk Metrics**: Expected return, volatility, Sharpe ratio, maximum drawdown, and diversification score
-- **Professional Recommendations**: Actionable advice based on portfolio metrics
+### 📊 Portfolio Metrics
+- **Asset Classes:** US Stocks, International Stocks, Bonds, Real Estate, Cash, Commodities.
+- **Key Metrics:** Expected Return, Volatility, Sharpe Ratio, Max Drawdown, Diversification Score.
+- **Risk & Allocation:** Adjusted based on time horizon, risk tolerance, and investment goals.
 
 ### 📈 Visualizations
-- **Pie Chart**: Clear breakdown of asset allocation
-- **Color-Coded Assets**: Professional and intuitive presentation
-- **Export Options**: Save portfolio recommendations to a text file
+- **Pie Charts:** Clear allocation visuals without overlap issues.
+- **Interactive Metrics:** Streamlit interface for live portfolio adjustments.
+- **Legend with Percentages:** Shows full asset details in legend for clarity.
 
-### 🔄 User Experience
-- **CLI Interface**: Clean, intuitive interface with emojis and formatted output
-- **Robust Error Handling**: Validates user input and ensures smooth operation
-- **Multiple Sessions**: Create multiple portfolios in a single run
-- **Report Generation**: Save and share detailed portfolio recommendations
+### 🔧 User Experience
+- **CLI Option:** Run `main.py` for a terminal-based portfolio advisor.
+- **Web App:** Run `app.py` with Streamlit for a modern web interface.
+- **Error Handling:** Validates inputs and prevents invalid selections.
+
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 - Python 3.7+
-- Install required packages:
-```bash
-pip install -r requirements.txt
+- Required packages: `streamlit`, `matplotlib`, `numpy`
+
+### Installation
+1. Clone or download the project.
+2. Install dependencies:
+   ```bash
+   py -m pip install streamlit matplotlib numpy
